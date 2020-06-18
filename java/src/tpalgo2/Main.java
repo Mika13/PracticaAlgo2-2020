@@ -4,25 +4,25 @@ public class Main {
 	
     public static RedSatelital getRed() {
     	// Satelites C1, C2, C3 = Orbita GEO
-        Operador c1 = new Operador(1);
-        Operador c2 = new Operador(2);
-        Operador c3 = new Operador(3);
+        Operador c1 = new Operador("C1");
+        Operador c2 = new Operador("C2");
+        Operador c3 = new Operador("C3");
         
         // Satelites 
         // M1 = Orbita Baja (LEO)
-        Operador m1 = new Operador(4);
+        Operador m1 = new Operador("M1");
         // M2 = Orbita Media (MEO)
-        Operador m2 = new Operador(5);
+        Operador m2 = new Operador("M2");
         // M3 = Orbita Baja (LEO)
-        Operador m3 = new Operador(6);
+        Operador m3 = new Operador("M3");
         // M4 = Orbita Media (MEO)        
-        Operador m4 = new Operador(7);
+        Operador m4 = new Operador("M4");
         
         // Estaciones terrestres
-        Operador e1 = new Operador(8);
-        Operador e2 = new Operador(9);
-        Operador e3 = new Operador(10);
-        Operador e4 = new Operador(11);
+        Operador e1 = new Operador("E1");
+        Operador e2 = new Operador("E2");
+        Operador e3 = new Operador("E3");
+        Operador e4 = new Operador("E4");
         
         
         c1.agregarConexion(new Conexion(c1, c2, 4000));
@@ -50,15 +50,24 @@ public class Main {
         
         
         e1.agregarConexion(new Conexion(e1, e2, 300));
+        e1.agregarConexion(new Conexion(e1, m1, 2000));
+        e1.agregarConexion(new Conexion(e1, c1, 36000));
         
+        
+               
         e2.agregarConexion(new Conexion(e2, e1, 300));
-        e2.agregarConexion(new Conexion(e2, e3, 200));
+        e2.agregarConexion(new Conexion(e2, c1, 36000));
+        e2.agregarConexion(new Conexion(e2, m2, 10000));
+        e2.agregarConexion(new Conexion(e2, m3, 1500));
+        
+                
+        e3.agregarConexion(new Conexion(e3, m3, 1500));
+        e3.agregarConexion(new Conexion(e3, c2, 36000));
+        e3.agregarConexion(new Conexion(e3, m4, 20000));
         
         
-        e3.agregarConexion(new Conexion(e3, e2, 200));
-        e3.agregarConexion(new Conexion(e3, e4, 400));
-        
-        e4.agregarConexion(new Conexion(e4, e3, 400));
+        e4.agregarConexion(new Conexion(e4, m4, 20000));
+        e4.agregarConexion(new Conexion(e4, c3, 36000));
         
         RedSatelital graph = new RedSatelital();
         graph.addOperador(c1);

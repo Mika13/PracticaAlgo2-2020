@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Operador {
 	
-    private int idOperador;
+    private String idOperador;
     private List<Conexion> conexiones;
  
-    public Operador(int idOperador) {
+    public Operador(String idOperador) {
         this.idOperador = idOperador;
     }
  
-    public int getIdOperador() {
+    public String getIdOperador() {
         return this.idOperador;
     }
  
