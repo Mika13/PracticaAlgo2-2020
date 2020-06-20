@@ -6,6 +6,7 @@ public class Conexion {
 	private Operador destino;
 	private double distancia;
 	private boolean activa;
+	private double latencia;
 
 	public boolean isActiva() {
 		return activa;
@@ -43,6 +44,14 @@ public class Conexion {
 
 	public void setDistancia(double distancia) {
 		this.distancia = distancia;
+	}
+	
+	public double getLatencia() {
+		return latencia;
+	}
+
+	public void setLatencia(double latencia) {
+		this.latencia = latencia;
 	}
 
 	@Override
