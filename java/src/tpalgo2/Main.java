@@ -4,25 +4,25 @@ public class Main {
 
 	public static RedSatelital getRed() {
 		// Satelites C1, C2, C3 = Orbita GEO
-		Operador c1 = new Operador("C1");
-		Operador c2 = new Operador("C2");
-		Operador c3 = new Operador("C3");
+		SateliteComunicaciones c1 = new SateliteComunicaciones("C1");
+		SateliteComunicaciones c2 = new SateliteComunicaciones("C2");
+		SateliteComunicaciones c3 = new SateliteComunicaciones("C3");
 
 		// Satelites
 		// M1 = Orbita Baja (LEO)
-		Operador m1 = new Operador("M1");
+		SateliteMetereologico m1 = new SateliteMetereologico("M1");
 		// M2 = Orbita Media (MEO)
-		Operador m2 = new Operador("M2");
+		SateliteMetereologico m2 = new SateliteMetereologico("M2");
 		// M3 = Orbita Baja (LEO)
-		Operador m3 = new Operador("M3");
+		SateliteMetereologico m3 = new SateliteMetereologico("M3");
 		// M4 = Orbita Media (MEO)
-		Operador m4 = new Operador("M4");
+		SateliteMetereologico m4 = new SateliteMetereologico("M4");
 
 		// Estaciones terrestres
-		Operador e1 = new Operador("E1");
-		Operador e2 = new Operador("E2");
-		Operador e3 = new Operador("E3");
-		Operador e4 = new Operador("E4");
+		Estacion e1 = new Estacion("E1");
+		Estacion e2 = new Estacion("E2");
+		Estacion e3 = new Estacion("E3");
+		Estacion e4 = new Estacion("E4");
 
 		c1.agregarConexion(new Conexion(c1, c2, 4000));
 		c1.agregarConexion(new Conexion(c1, e1, 36000));
@@ -84,6 +84,11 @@ public class Main {
 		// Creo grafo no dirigido
 		RedSatelital redSatelital = getRed();
 		System.out.println(redSatelital);
+
+		// Operacion Ver Clima
+		ClimaRequest climaReq = new ClimaRequest(0, "E1", "M3", "Temperatura");
+		ClimaReply climaResp = redSatelital.getClima(climaReq);
+
 	}
 
 }

@@ -1,11 +1,28 @@
 package tpalgo2;
 
-public class Satelite extends Operador {
+import java.util.List;
 
-	public Satelite(String idOperador) {
-		super(idOperador);
-		// TODO Auto-generated constructor stub
-	}
-	private String Orbita;
-	private String Tipo;
+public abstract class Satelite extends Operador {
+
+	protected String Orbita;
+	protected String Tipo;
+
+	@Override
+	public abstract void recibir(Mensaje mensaje);
+
+	@Override
+	public abstract void enviar(Mensaje mensaje);
+
+	@Override
+	public abstract void agregarConexion(Conexion conexion);
+
+	@Override
+	public abstract void actualizarConexion(Conexion conexion);
+
+	@Override
+	public abstract String getID();
+
+	@Override
+	public abstract List<Conexion> getConexiones();
+
 }

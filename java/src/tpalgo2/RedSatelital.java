@@ -23,4 +23,17 @@ public class RedSatelital {
 		return "Red Satelital [operadores=" + operadores + "]";
 	}
 
+	
+	
+	public ClimaReply getClima(ClimaRequest mensaje) {
+		
+		// TODO:
+		// Recorrer grafo buscando Operador = Mensaje.idOperadorOrigen
+		// Una vez encontrado, hacer operador.enviar(mensaje)
+		
+		return null;
+		
+	}
+
+	
 }

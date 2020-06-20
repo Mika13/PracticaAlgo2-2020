@@ -1,8 +1,10 @@
 package tpalgo2;
 
-public class Mensaje {
-	private Operador origenMsj;
-	private Operador destinoMsj;
-	private String contenido;
+public abstract class Mensaje {
+	
+	protected int id;
+	protected String idOperadorOrigen;
+	protected String idOperadorDestino;
+	protected String contenido;
 
 }

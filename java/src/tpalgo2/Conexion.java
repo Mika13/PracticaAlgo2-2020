@@ -56,7 +56,7 @@ public class Conexion {
 
 	@Override
 	public String toString() {
-		return "\n Conexion [origen=" + origen.getIdOperador() + ", destino=" + destino.getIdOperador() + ", distancia="
+		return "\n Conexion [origen=" + origen.getID() + ", destino=" + destino.getID() + ", distancia="
 				+ this.distancia + "]";
 	}
 
