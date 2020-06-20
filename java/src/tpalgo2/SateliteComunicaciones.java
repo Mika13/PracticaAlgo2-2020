@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SateliteComunicaciones extends Satelite {
-	private String Orbita;
-	private String Tipo;
-
 	public SateliteComunicaciones(String idOperador) {
 		this.idOperador = idOperador;
 

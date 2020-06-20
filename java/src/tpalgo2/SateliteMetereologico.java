@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SateliteMetereologico extends Satelite {
-	private String Orbita;
-	private String Tipo;
-
 	public SateliteMetereologico(String idOperador) {
 		this.idOperador = idOperador;
 
