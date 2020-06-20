@@ -3,11 +3,11 @@ package tpalgo2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Operador {
+public class Operador implements Pedido, Respuesta{
 
 	private String idOperador;
 	private List<Conexion> conexiones;
-	private List<Mensaje> consola;
+	private Consola consola;
 
 	public Operador(String idOperador) {
 		this.idOperador = idOperador;
@@ -35,29 +35,34 @@ public class Operador {
 
 	}
 
-	public void enviarMensaje(Mensaje mensaje) {
-
-	}
-
-	public void recibirMensaje(Mensaje mensaje) {
-
-	}
-
-	public void reenviarMensaje(Mensaje mensaje) {
-
-	}
-
-	public List<Mensaje> getConsola() {
-		return consola;
-	}
-
-	public void setConsola(List<Mensaje> consola) {
-		this.consola = consola;
-	}
 
 	@Override
 	public String toString() {
 		return "\n \tNodo [id=" + this.idOperador + ", Conexiones=" + this.conexiones + "]";
+	}
+
+	@Override
+	public void PingRequest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void InfoRequest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void PingReply() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void InfoReply() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
